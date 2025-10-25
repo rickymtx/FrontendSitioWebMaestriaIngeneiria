@@ -1,0 +1,121 @@
+
+/* Estilos para Requisitos Academicos  */
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    padding: 50px;
+    background-color: #fff;
+}
+
+.about-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 30px;
+    align-items: flex-start; 
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+    overflow: hidden;
+    margin-left: -40px;
+    margin-top: 20px;
+}
+
+.about-image img {
+    max-width: 310px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.about-text {
+    text-align: center; 
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+}
+
+.about-text h2 {
+    padding-top: -15px;
+    margin-bottom: 0px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #000;
+}
+
+.about-text p {
+    font-size: 1.3rem;
+    color: #000;
+    line-height: 1.6;
+    text-align: justify;
+    margin-top: -5px;
+}
+
+/* -------------------- */
+/* Estilos Responsivos */
+/* -------------------- */
+
+/* Tablets (Menos de 1024px) */
+@media screen and (max-width: 1024px) {
+    .about-container {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-image {
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about-image img {
+        max-width: 230px; 
+        display: block;
+        margin: 0 auto; 
+    }
+
+    .about-text {
+        text-align: center;
+    }
+}
+
+/* Teléfonos (Menos de 768px) */
+@media screen and (max-width: 768px) {
+    .about-section {
+        padding: 30px 15px; 
+    }
+
+    .about-container {
+        text-align: center;
+    }
+
+    .about-image {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about-image img {
+        margin-left: 0;
+        max-width: 200px;
+        display: block;
+        margin: 0 auto; 
+    }
+
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-text p {
+        font-size: 1.1rem;
+    }
+}

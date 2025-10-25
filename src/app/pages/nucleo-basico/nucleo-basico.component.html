@@ -1,0 +1,88 @@
+<app-navbar-gob></app-navbar-gob>
+<app-logos></app-logos>
+<app-navbar-tec></app-navbar-tec>
+
+<!-- Núcleo Académico Básico -->
+<div class="perfil-wrapper">
+    <div class="about-image">
+        <img src="assets/MI_hd.png" alt="Descripción de la imagen" />
+    </div>
+    <div class="perfil-container">
+        <h2>Núcleo Académico Básico</h2>
+        <table id="tabla1" class="perfil">
+            <td class="imagen">
+                <img src="assets/Ivan.jpg" alt="Foto de perfil" />
+            </td>
+            <td class="datos">
+                <h3>Dr Iván Gonzalez Lazalde</h3>
+                <strong>Grado Máximo Obtenido:</strong> Doctorado<br />
+                <strong>Especialidad:</strong> Desarrollo Empresarial<br />
+                <strong>Cédula Profesional:</strong> <br />
+
+                <div class="detalles" [class.oculto]="oculto">
+                    <strong>Nivel SNII:</strong> SNII 1<br />
+                    <strong>Cargo:</strong> Profesor Investigador<br />
+                    <strong>Unidad de Adscripción:</strong> Ingeniería Industrial<br />
+                    <strong>Correo Electrónico:</strong> igonzalez&#64;itdurango.edu.mx<br />
+                    <strong>Semblanza:</strong> Profesor con reconocimiento al perfil deseable desde 2007, líder de
+                    Cuerpo Académico ITDUR-CA-10 en nivel de consolidación, Investigador Estatal Honorifico desde el
+                    2020, miembro del Sistema Nacional de Investigadores e Investigadoras SNII nivel candidato 2020-2024
+                    y nivel 1 2025-2029.<br />
+                    <strong>Líneas de Investigación:</strong> Competitividad, sustentabilidad y gestión de las
+                    organizaciones.<br />
+                    Desarrollo de proyectos de ingeniería para el desarrollo regional.<br>
+                    <strong>CVU:</strong><br />
+                    https://www.researchgate.net/profile/Ivan-Lazalde-2?ev=hdr_xprf
+                </div>
+
+                <span class="toggle-btn" (click)="toggleDetalles()">
+                    {{ oculto ? 'Ver más...' : 'Ver menos...' }}
+                </span>
+            </td>
+            <tbody></tbody>
+
+            <div class="separator"></div>
+        </table>
+
+        <table id="tabla1" class="perfil">
+            <td class="imagen">
+                <img src="assets/NormaAlicia.jpg" alt="Foto de perfil" />
+            </td>
+            <td class="datos">
+                <h3>Dra. Norma Alicia García Vidaña</h3>
+                <strong>Grado Máximo Obtenido:</strong> Doctorado<br />
+                <strong>Especialidad:</strong> Tecnologías de la Información<br />
+                <strong>Cédula Profesional:</strong> 14670965<br />
+
+                <div class="detalles" [class.oculto]="oculto">
+                    <strong>Nivel SNII:</strong> <br />
+                    <strong>Cargo:</strong> Profesor Investigador<br />
+                    <strong>Unidad de Adscripción:</strong> Departamento de Sistemas y Computación<br />
+                    <strong>Correo Electrónico:</strong> norma.garcia&#64;itdurango.edu.mx<br />
+                    <strong>Semblanza:</strong> Docente del Tecnológico Nacional de México, con una trayectoria
+                    académica en el Instituto Tecnológico de Durango desde 1998. Actualmente, me desempeño como profesor
+                    en el Departamento de Sistemas y Computación, así como en la Maestría en Ingeniería del Instituto
+                    Tecnológico de Durango.<br />
+
+                    <br>Desde 2020, cuento con el Reconocimiento a Perfil Deseable, reflejando mi compromiso con la calidad
+                    educativa y la actualización profesional. Mi experiencia y especialización abarcan áreas clave como
+                    el desarrollo móvil, el Internet de las Cosas (IoT) y la ciencia de datos, contribuyendo al
+                    fortalecimiento de la formación tecnológica en el país.<br />
+                    <strong>Líneas de Investigación:</strong> Ingeniería de Sistemas<br />
+                    <strong>CVU:</strong><br />
+                    https://scholar.google.com/citations?user=zjPMTe4AAAAJ&hl=es
+                </div>
+
+                <span class="toggle-btn" (click)="toggleDetalles()">
+                    {{ oculto ? 'Ver más...' : 'Ver menos...' }}
+                </span>
+            </td>
+            <tbody></tbody>
+
+            <div class="separator"></div>
+        </table>
+    </div>
+</div>
+
+<app-footer-tec></app-footer-tec>
+<app-footer-gob></app-footer-gob>

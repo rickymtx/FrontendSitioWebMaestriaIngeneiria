@@ -1,0 +1,840 @@
+
+
+/* Estilos Logos Oficiales */
+.imagenes-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: left;
+    margin-left: 150px;
+}
+
+/* Estilos generales */
+.imagenes-container img {
+    height: auto;
+    object-fit: contain;
+    margin-bottom: -10px;
+}
+
+/* Tamaños individuales para cada imagen */
+.img-sep {
+    margin-top: 5px;
+    width: 300px;
+}
+
+.img-tecnm {
+    width: 170px;
+}
+
+.img-escudo {
+    width: 65px;
+}
+
+/* Efecto hover para todas las imágenes */
+.imagenes-container img:hover {
+    color: white;
+}
+
+/* Separador vertical */
+.separatorLogos {
+    width: 2px;
+    height: 75px;
+    /* Ajusta la altura según sea necesario */
+    background-color: #b29140;
+    /* Color de la línea */
+    opacity: 0.5;
+    /* Opcional: hace la línea más tenue */
+}
+
+/* Contenedor de iconos */
+.iconos-container {
+    display: flex;
+    gap: 20px;
+    margin-left: 270px;
+    /* Mueve los iconos a la derecha */
+    margin-top: 17px;
+    /* Ajusta la distancia hacia abajo */
+}
+
+/* Estilo de los círculos azules */
+.icono-circle {
+    width: 45px;
+    height: 45px;
+    background-color: #003366;
+    /* Color azul */
+    border-radius: 50%;
+    /* Hace el div circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+.icono-circle i {
+    color: white !important;
+    /* Asegura que el color se aplique */
+}
+
+.icono {
+    margin-top: -3px;
+    /* Ajusta el valor para subir o bajar */
+}
+
+/* Íconos dentro de los círculos */
+.icono {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Contenedor del icono de búsqueda */
+.search-container {
+    position: relative;
+    /* Asegura que la barra de búsqueda se posicione respecto a este div */
+    display: flex;
+    align-items: center;
+}
+
+/* Ícono de búsqueda */
+.search-icon {
+    position: absolute;
+    left: 15px;
+    /* Posiciona la lupa dentro de la barra de búsqueda */
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Barra de búsqueda oculta por defecto */
+.search-bar {
+    position: absolute;
+    right: 0px;
+    /* Alinea la barra correctamente */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    /* Inicialmente oculta */
+    height: 45px;
+    border: none;
+    outline: none;
+    padding: 0 10px 0 40px;
+    /* Ajusta para que la lupa no cubra el texto */
+    font-size: 16px;
+    background-color: #003366;
+    /* Azul */
+    color: #fff;
+    border-radius: 60px;
+    transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Cuando el usuario pasa el cursor sobre el contenedor, la barra aparece */
+.search-container:hover .search-bar {
+    width: 340px;
+    /* Se despliega la barra */
+    padding: 0 10px 0 40px;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Función dinamica en Js*/
+.video-item {
+    opacity: 0;
+    transform: translateY(30px);
+    /* Para aplicar un desplazamiento inicial */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.video-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+    /* Restablecer el desplazamiento al ser visible */
+}
+
+/*--------------------------*/
+/*-----DISEÑO RESPONSIVO----*/
+/*--------------------------*/
+
+/* Cuando la pantalla es menor a 1200px */
+@media (max-width: 1200px) {
+    .imagenes-container {
+        margin-left: 50px;
+    }
+
+    .iconos-container {
+        margin-left: 100px;
+        justify-content: center;
+    }
+
+    .img-sep {
+        margin-top: 15px;
+        width: 250px;
+    }
+
+    .img-tecnm {
+        margin-top: 7.5px;
+        width: 150px;
+    }
+
+    .img-escudo {
+        margin-top: 10px;
+        width: 55px;
+    }
+
+    .separatorLogos {
+        width: 2px;
+        height: 80px;
+        background-color: #b29140;
+        opacity: 0.5;
+    }
+}
+
+/* Cuando la pantalla es menor a 768px (tabletas) */
+@media (max-width: 768px) {
+
+    /* Aseguramos que las imágenes y los íconos estén en una fila */
+    .imagenes-container {
+        display: flex;
+        flex-wrap: wrap;
+        /* Permite que los elementos se ajusten si no caben */
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        /* Espaciado entre elementos */
+        margin-left: -10px;
+    }
+
+    /* Tamaños individuales para cada imagen */
+    .img-sep {
+        margin-top: 0px;
+        width: 140px;
+    }
+
+    .img-tecnm {
+        margin-top: -5px;
+        width: 80px;
+    }
+
+    .img-escudo {
+        margin-top: 0px;
+        width: 35px;
+    }
+
+    /* Alinear los iconos con las imágenes */
+    .iconos-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        /* Espaciado entre iconos */
+        margin-left: 60px;
+        /* Mueve los íconos más a la derecha */
+        margin-top: 10px;
+    }
+
+    /* Ajustamos el tamaño de los iconos */
+    .icono-circle {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        /* Centra verticalmente */
+        justify-content: center;
+        /* Centra horizontalmente */
+    }
+
+    .icono {
+        margin-top: -7px !important;
+        width: 20px;
+        height: 20px;
+        display: block;
+        /* Asegura que no haya espacio extra */
+    }
+
+    /* Barra de búsqueda más pequeña */
+    .search-bar-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-bar {
+        flex-shrink: 0;
+        /* Evita que se expanda */
+    }
+
+    /* Separador oculto en pantallas pequeñas */
+    .separatorLogos {
+        width: 2px;
+        height: 45px;
+        background-color: #b29140;
+        opacity: 0.5;
+    }
+}
+
+/* Cuando la pantalla es menor a 500px (teléfonos móviles) */
+@media (max-width: 500px) {
+    .contenedor-principal {
+        display: flex;
+        justify-content: space-between;
+        /* imagenes a la izq, iconos a la der */
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .imagenes-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        margin-top: -10px;
+    }
+
+    .iconos-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-left: 90px;
+        gap: 7px;
+        margin-bottom: 5px;
+    }
+
+    .img-sep {
+        width: 140px;
+        margin-top: 0;
+    }
+
+    .img-tecnm {
+        width: 80px;
+        margin-top: -3px;
+    }
+
+    .img-escudo {
+        width: 35px;
+        margin-top: 0;
+    }
+
+    .separatorLogos {
+        width: 1px;
+        height: 30px;
+        background-color: #b29140;
+        opacity: 0.5;
+    }
+
+    .icono-circle {
+        width: 28px;
+        height: 28px;
+    }
+
+    .icono {
+        width: 17px;
+        height: 18px;
+        margin-top: -6px;
+    }
+
+    .search-bar {
+        width: 180px;
+        font-size: 14px;
+        padding: 0 10px 0 35px;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    .search-container:hover .search-bar {
+        width: 180px;
+        padding: 0 10px 0 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-principal {
+        display: flex;
+        justify-content: space-between;
+        /* imagenes a la izq, iconos a la der */
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .imagenes-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        margin-top: -10px;
+    }
+
+    .iconos-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-left: 90px;
+        gap: 7px;
+        margin-bottom: 5px;
+    }
+
+    .img-sep {
+        width: 130px;
+        margin-top: 0;
+    }
+
+    .img-tecnm {
+        width: 70px;
+        margin-top: -3px;
+    }
+
+    .img-escudo {
+        width: 35px;
+        margin-top: 0;
+    }
+
+    .separatorLogos {
+        width: 1px;
+        height: 30px;
+        background-color: #b29140;
+        opacity: 0.5;
+    }
+
+    .icono-circle {
+        width: 28px;
+        height: 28px;
+    }
+
+    .icono {
+        width: 17px;
+        height: 18px;
+        margin-top: -6px;
+    }
+
+    .search-bar {
+        width: 180px;
+        font-size: 14px;
+        padding: 0 10px 0 35px;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    .search-container:hover .search-bar {
+        width: 180px;
+        padding: 0 10px 0 35px;
+    }
+}
+
+@media (max-width: 460px) {
+    .contenedor-principal {
+        display: flex;
+        justify-content: space-between;
+        /* imagenes a la izq, iconos a la der */
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .imagenes-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        margin-top: -10px;
+    }
+
+    .iconos-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-left: 40px;
+        gap: 7px;
+        margin-bottom: 5px;
+    }
+
+    .img-sep {
+        width: 130px;
+        margin-top: 0;
+    }
+
+    .img-tecnm {
+        width: 70px;
+        margin-top: -3px;
+    }
+
+    .img-escudo {
+        width: 29px;
+        margin-top: 0;
+    }
+
+    .separatorLogos {
+        width: 1px;
+        height: 30px;
+        background-color: #b29140;
+        opacity: 0.5;
+    }
+
+    .icono-circle {
+        width: 28px;
+        height: 28px;
+    }
+
+    .icono {
+        width: 17px;
+        height: 18px;
+        margin-top: -6px;
+    }
+
+    .search-bar {
+        width: 180px;
+        font-size: 14px;
+        padding: 0 10px 0 35px;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    .search-container:hover .search-bar {
+        width: 180px;
+        padding: 0 10px 0 35px;
+    }
+}
+
+@media (max-width: 440px) {
+    .contenedor-principal {
+        display: flex;
+        justify-content: space-between;
+        /* imagenes a la izq, iconos a la der */
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .imagenes-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        margin-top: -10px;
+    }
+
+    .iconos-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-left: 40px;
+        gap: 7px;
+        margin-bottom: 5px;
+    }
+
+    .img-sep {
+        width: 130px;
+        margin-top: 0;
+    }
+
+    .img-tecnm {
+        width: 70px;
+        margin-top: -3px;
+    }
+
+    .img-escudo {
+        width: 29px;
+        margin-top: 0;
+    }
+
+    .separatorLogos {
+        width: 1px;
+        height: 30px;
+        background-color: #b29140;
+        opacity: 0.5;
+    }
+
+    .icono-circle {
+        width: 28px;
+        height: 28px;
+    }
+
+    .icono {
+        width: 17px;
+        height: 18px;
+        margin-top: -6px;
+    }
+
+    .search-bar {
+        width: 180px;
+        font-size: 14px;
+        padding: 0 10px 0 35px;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    .search-container:hover .search-bar {
+        width: 180px;
+        padding: 0 10px 0 35px;
+    }
+}
+
+@media (max-width: 420px) {
+    .contenedor-principal {
+        display: flex;
+        justify-content: space-between;
+        /* imagenes a la izq, iconos a la der */
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .imagenes-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+        margin-top: -10px;
+    }
+
+    .iconos-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-left: 35px;
+        gap: 7px;
+        margin-bottom: 5px;
+    }
+
+    .img-sep {
+        width: 130px;
+        margin-top: 0;
+    }
+
+    .img-tecnm {
+        width: 70px;
+        margin-top: -3px;
+    }
+
+    .img-escudo {
+        width: 29px;
+        margin-top: 0;
+    }
+
+    .separatorLogos {
+        width: 1px;
+        height: 30px;
+        background-color: #b29140;
+        opacity: 0.5;
+    }
+
+    .icono-circle {
+        width: 28px;
+        height: 28px;
+    }
+
+    .icono {
+        width: 17px;
+        height: 18px;
+        margin-top: -6px;
+    }
+
+    .search-bar {
+        width: 180px;
+        font-size: 14px;
+        padding: 0 10px 0 35px;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    .search-container:hover .search-bar {
+        width: 180px;
+        padding: 0 10px 0 35px;
+    }
+}
+
+/* Cuando la pantalla es menor a 390px (Pantallas todavía más pequeñas) */
+@media (max-width: 390px) {
+    .contenedor-principal {
+        display: flex;
+        justify-content: space-between;
+        /* imagenes a la izq, iconos a la der */
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .imagenes-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+        margin-top: -10px;
+    }
+
+    .iconos-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-left: 20px;
+        gap: 7px;
+        margin-bottom: 5px;
+    }
+
+    .img-sep {
+        width: 130px;
+        margin-top: 0;
+    }
+
+    .img-tecnm {
+        width: 70px;
+        margin-top: -3px;
+    }
+
+    .img-escudo {
+        width: 29px;
+        margin-top: 0;
+    }
+
+    .separatorLogos {
+        width: 1px;
+        height: 30px;
+        background-color: #b29140;
+        opacity: 0.5;
+    }
+
+    .icono-circle {
+        width: 28px;
+        height: 28px;
+    }
+
+    .icono {
+        width: 17px;
+        height: 18px;
+        margin-top: -6px;
+    }
+
+    .search-bar {
+        width: 180px;
+        font-size: 14px;
+        padding: 0 10px 0 35px;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    .search-container:hover .search-bar {
+        width: 180px;
+        padding: 0 10px 0 35px;
+    }
+}
+
+@media (max-width: 370px) {
+    .contenedor-principal {
+        display: flex;
+        justify-content: space-between;
+        /* imagenes a la izq, iconos a la der */
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .imagenes-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+        margin-top: -10px;
+    }
+
+    .iconos-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-left: 20px;
+        gap: 7px;
+        margin-bottom: 5px;
+    }
+
+    .img-sep {
+        width: 100px;
+        margin-top: 0;
+    }
+
+    .img-tecnm {
+        width: 50px;
+        margin-top: -3px;
+    }
+
+    .img-escudo {
+        width: 18px;
+        margin-top: 10;
+    }
+
+    .separatorLogos {
+        margin-bottom: -10px;
+        width: 1px;
+        height: 20px;
+        background-color: #b29140;
+        opacity: 0.5;
+    }
+
+    .icono-circle {
+        width: 28px;
+        height: 28px;
+    }
+
+    .icono {
+        width: 17px;
+        height: 18px;
+        margin-top: -6px;
+    }
+
+    .search-bar {
+        width: 180px;
+        font-size: 14px;
+        padding: 0 10px 0 35px;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    .search-container:hover .search-bar {
+        width: 180px;
+        padding: 0 10px 0 35px;
+    }
+}

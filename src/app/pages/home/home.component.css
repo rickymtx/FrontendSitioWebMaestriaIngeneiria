@@ -1,0 +1,361 @@
+/* Estilos para presentación de Maestría en Ingeniería */
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  width: 100%;
+  /* Tamaño de la imagen */
+  height: auto;
+  object-fit: cover;
+  display: block;
+  /* Evita espacios adicionales alrededor de la imagen */
+}
+
+.image-right {
+  width: 100px;
+  max-width: 85%;
+  height: auto;
+  margin-left: -20px;
+  margin-bottom: 60px;
+}
+
+/* Estilos para presentación de Maestría en Ingeniería */
+.section-cohorte {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+  gap: -15px;
+}
+
+.tabla-imagenes {
+  margin-left: 35px;
+  border-collapse: collapse;
+  width: 65%;
+  max-width: 100%;
+  text-align: center;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+.titulo-cohorte {
+  font-size: 2.1rem;
+  padding: 20px 0;
+}
+
+.imagen {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+/*--------------------------*/
+/*-----DISEÑO RESPONSIVO----*/
+/*--------------------------*/
+
+@media screen and (max-width: 767px) {
+  .section-cohorte {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tabla-imagenes {
+    align-items: center;
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .image-right {
+    margin-left: 0;
+    max-width: 50%;
+    margin-bottom: 5px;
+  }
+}
+
+/*-------------------------------------------------*/
+
+/* Estilos de carrusel */
+.carousel-container {
+  margin-top: 35px;
+  margin-bottom: -100px;
+  position: relative;
+  width: 100vw;
+  /* Ocupa toda la pantalla horizontalmente */
+  height: 450px;
+  /* Mantiene una altura fija */
+  overflow: hidden;
+  margin-bottom: -50px;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 200vw;
+  /* Ajusta según el número de imágenes (2 imágenes = 200vw) */
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100vw;
+  /* Cada imagen ocupa toda la pantalla */
+  height: 250px;
+  /* Asegura que las imágenes coincidan con la altura del contenedor */
+  object-fit: cover;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev,
+.next {
+  display: none;
+}
+
+/*-------------------------------------------------*/
+
+/* Sección de Galería */
+.galeria-becas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.galeria-becas .card {
+  position: relative;
+  overflow: hidden;
+}
+
+.galeria-becas .card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.galeria-becas .card:hover img {
+  transform: scale(1.05);
+}
+
+.galeria-becas .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+
+}
+
+.galeria-becas .overlay h3 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: auto 0;
+  text-align: left;
+}
+
+.galeria-becas .overlay a {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.galeria-becas .overlay a:hover {
+  text-decoration: underline;
+}
+
+/* Segunda fila con solo dos columnas centradas */
+.galeria-becas .card:nth-child(4),
+.galeria-becas .card:nth-child(5) {
+  grid-column: span 1;
+}
+
+.galeria-becas {
+  grid-template-rows: auto auto;
+}
+
+@media (max-width: 900px) {
+  .galeria-becas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .galeria-becas {
+    grid-template-columns: 1fr;
+  }
+
+  .galeria-becas .card img {
+    height: 200px;
+  }
+}
+
+/* --------------------------------------------------------- */
+
+/* Sección de Eventos */
+
+.eventos {
+  max-width: 1100px;
+  /* Controla el ancho de la sección */
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  margin-top: 70px;
+}
+
+.titulo-eventos {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.evento {
+  padding: 1.5rem 0;
+}
+
+.evento-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.fecha,
+.titulo,
+.lugar {
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.descripcion {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.divisor {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 1rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .evento-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .descripcion {
+    text-align: justify;
+  }
+}
+
+/* --------------------------------------------------------- */
+
+/* Sección de Podcast y Redes Sociales */
+
+.multimedia-section {
+  padding: 50px 5%;
+  background-color: #ffff;
+}
+
+.multimedia-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.multimedia-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.subtitle-podcast {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #000;
+  margin-left: 65px;
+}
+
+.podcast {
+  margin: 0 auto 30px auto;   /* centra cada podcast */
+  max-width: 700px;           /* controla el ancho máximo */
+}
+
+.podcast iframe {
+  width: 100% !important;     /* respeta el max-width del contenedor */
+  display: block;
+  margin: 0 auto;
+}
+
+.podcast h4 {
+  max-width: 500px;           /* igual que el iframe */
+  margin: 10px auto;          /* centra texto */
+  text-align: center;
+}
+
+.podcast p {
+  text-align: center;
+  color: #666;
+  font-size: 0.95em;
+}
+
+.multimedia-right iframe,
+.fb-page {
+  width: 100% !important;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .multimedia-content {
+    grid-template-columns: 1fr;
+  }
+
+  .subtitle-podcast {
+    margin-left: 0px;
+  }
+}

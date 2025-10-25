@@ -1,0 +1,128 @@
+
+/* Estilos Navbar Gobierno de México */
+
+.navbarGobierno {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 14px 80px; 
+    background-color: #611232;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.navbarGobierno .logo-link {
+    position: relative;
+    left: 0;
+}
+
+.navbarGobierno .logo {
+    width: 130px;
+    height: auto;
+    display: block;
+}
+
+.nav-linksGobierno {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-linksGobierno li {
+    margin-left: 24px;
+}
+
+.nav-linksGobierno a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 8px 5px;
+}
+
+.nav-linksGobierno a:hover {
+    color: #dcc9a0;;
+}
+
+.menu-iconGobierno {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-iconGobierno .lineGobierno {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+}
+
+#menu-toggleGobierno {
+    display: none;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media(max-width: 768px) {
+    .navbarGobierno {
+        padding: 16px;
+    }
+
+    .menu-iconGobierno {
+        display: flex;
+    }
+
+    .nav-linksGobierno {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        background-color: #611232;
+        text-align: center;
+        transition: heigth 0.5s ease;
+    }
+
+    .nav-linksGobierno li {
+        margin: 0;
+        padding: 20px 0;
+        width: 100%;
+    }
+
+    .nav-linksGobierno a {
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    #menu-toggleGobierno:checked + .menu-iconGobierno + .nav-linksGobierno {
+        height: auto;
+        overflow: visible;
+    }
+
+    #menu-toggleGobierno:checked + .menu-iconGobierno .lineGobierno:nth-child(1) {
+        transform: rotate(45deg) translate(15px, 3px);
+    }
+
+    #menu-toggleGobierno:checked + .menu-iconGobierno .lineGobierno:nth-child(2) {
+        transform: scale(0);
+    }
+
+    #menu-toggleGobierno:checked + .menu-iconGobierno .lineGobierno:nth-child(3) {
+        transform: rotate(-45deg) translate(15px, -4px);
+    }
+}

@@ -1,0 +1,260 @@
+
+/* Estilos para Núcleo Académico Básico */
+
+.perfil-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.about-image {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.about-image img {
+    max-width: 230px;
+    height: auto;
+    object-fit: contain;
+    margin-top: 35px;
+    margin-left: -210px;
+}
+
+.perfil-container {
+    flex: 2 1 600px;
+    width: 100%;
+    margin-left: -200px;
+}
+
+.perfil-container h2 {
+    margin-top: 35px;
+    font-size: 2rem;
+    color: #000;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+table.perfil {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td.imagen {
+    width: 150px;
+    padding: 8px;
+    vertical-align: top;
+}
+
+td.imagen img {
+    width: 100%;
+    height: auto;
+}
+
+td.datos {
+    padding: 8px 8px 8px 24px;
+    vertical-align: top;
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.separator {
+    width: 530% !important;
+    height: 2px !important;
+    background-color: #ccc !important;
+    margin: 40px 0px !important;
+    margin-bottom: 40px !important;
+}
+
+.toggle-btn {
+    color: #007BFF;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.toggle-btn:hover {
+    text-decoration: underline;
+}
+
+.oculto {
+    display: none;
+}
+
+
+/* Responsividad */
+@media screen and (max-width: 1024px) {
+    .perfil-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-image {
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: -30px;
+    }
+
+    .about-image img {
+        max-width: 180px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .perfil-container h2 {
+        margin-top: -45px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .perfil-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        margin-left: 15px;
+    }
+
+    table.perfil {
+        margin: 0 auto;
+    }
+
+    td.imagen,
+    td.datos {
+        text-align: justify;
+    }
+
+    td.datos {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .perfil-wrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 10px;
+    }
+
+    .perfil-container {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .about-image {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .about-image img {
+        max-width: 60%;
+        margin-left: 60px;
+    }
+
+    .perfil-container h2 {
+        margin-top: -50px;
+        font-size: 1.7rem;
+    }
+
+    table.perfil {
+        margin: 0 auto;
+    }
+
+    td.imagen,
+    td.datos {
+        display: block;
+        width: 50%;
+        padding: 10px 0;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    td.datos {
+        padding-left: 0;
+    }
+
+    .separator {
+        width: 100% !important;
+        height: 2px !important;
+        background-color: #ccc !important;
+        margin: 40px 0px !important;
+        margin-bottom: 40px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .about-image {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .about-image img {
+        margin-top: -40px;
+        max-width: 70%;
+        margin-left: 30px;
+    }
+
+    .perfil-container h2 {
+        font-size: 1.7rem;
+        margin-top: -110px;
+    }
+
+    .separator {
+        width: 100% !important;
+        height: 2px !important;
+        background-color: #ccc !important;
+        margin: 40px 0px !important;
+        margin-bottom: 40px !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .about-image {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .about-image img {
+        margin-top: -40px;
+        max-width: 70%;
+        margin-left: 30px;
+    }
+
+    .perfil-container h2 {
+        font-size: 1.7rem;
+        margin-top: -110px;
+    }
+
+    .separator {
+        width: 100% !important;
+        height: 2px !important;
+        background-color: #ccc !important;
+        margin: 40px 0px !important;
+        margin-bottom: 40px !important;
+    }
+}
