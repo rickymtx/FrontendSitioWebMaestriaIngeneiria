@@ -19,26 +19,34 @@
                 <strong>Especialidad:</strong> Desarrollo Empresarial<br />
                 <strong>Cédula Profesional:</strong> <br />
 
-                <div class="detalles" [class.oculto]="oculto">
+                <!-- DETALLES OCULTOS -->
+                <div class="detalles" [class.oculto]="ocultos[0]">
                     <strong>Nivel SNII:</strong> SNII 1<br />
                     <strong>Cargo:</strong> Profesor Investigador<br />
                     <strong>Unidad de Adscripción:</strong> Ingeniería Industrial<br />
                     <strong>Correo Electrónico:</strong> igonzalez&#64;itdurango.edu.mx<br />
-                    <strong>Semblanza:</strong> Profesor con reconocimiento al perfil deseable desde 2007, líder de
-                    Cuerpo Académico ITDUR-CA-10 en nivel de consolidación, Investigador Estatal Honorifico desde el
-                    2020, miembro del Sistema Nacional de Investigadores e Investigadoras SNII nivel candidato 2020-2024
-                    y nivel 1 2025-2029.<br />
-                    <strong>Líneas de Investigación:</strong> Competitividad, sustentabilidad y gestión de las
-                    organizaciones.<br />
-                    Desarrollo de proyectos de ingeniería para el desarrollo regional.<br>
-                    <strong>CVU:</strong><br />
-                    https://www.researchgate.net/profile/Ivan-Lazalde-2?ev=hdr_xprf
+                    <strong>Semblanza:</strong> Profesor con reconocimiento al perfil deseable desde 2007...<br />
+                    <strong>Líneas de Investigación:</strong> Competitividad, sustentabilidad...<br />
+                    <strong>CVU:</strong><br>
+                    <a href="https://www.researchgate.net/profile/Ivan-Lazalde-2?ev=hdr_xprf" target="_blank"
+                        rel="noopener noreferrer">
+                        https://www.researchgate.net/profile/Ivan-Lazalde-2?ev=hdr_xprf
+                    </a>
+                    <br>
+
+                    <a href="https://scholar.google.com.mx/citations?user=aj286qwAAAAJ&hl=es" target="_blank"
+                        rel="noopener noreferrer">
+                        https://scholar.google.com.mx/citations?user=aj286qwAAAAJ&hl=es
+                    </a>
+                    <br>
                 </div>
 
-                <span class="toggle-btn" (click)="toggleDetalles()">
-                    {{ oculto ? 'Ver más...' : 'Ver menos...' }}
+                <!-- BOTÓN -->
+                <span class="toggle-btn" (click)="toggleDetalles(0)">
+                    {{ ocultos[0] ? 'Ver más...' : 'Ver menos...' }}
                 </span>
             </td>
+
             <tbody></tbody>
 
             <div class="separator"></div>
@@ -54,29 +62,27 @@
                 <strong>Especialidad:</strong> Tecnologías de la Información<br />
                 <strong>Cédula Profesional:</strong> 14670965<br />
 
-                <div class="detalles" [class.oculto]="oculto">
-                    <strong>Nivel SNII:</strong> <br />
+                <!-- DETALLES OCULTOS -->
+                <div class="detalles" [class.oculto]="ocultos[1]">
+                    <strong>Nivel SNII:</strong><br />
                     <strong>Cargo:</strong> Profesor Investigador<br />
                     <strong>Unidad de Adscripción:</strong> Departamento de Sistemas y Computación<br />
                     <strong>Correo Electrónico:</strong> norma.garcia&#64;itdurango.edu.mx<br />
-                    <strong>Semblanza:</strong> Docente del Tecnológico Nacional de México, con una trayectoria
-                    académica en el Instituto Tecnológico de Durango desde 1998. Actualmente, me desempeño como profesor
-                    en el Departamento de Sistemas y Computación, así como en la Maestría en Ingeniería del Instituto
-                    Tecnológico de Durango.<br />
-
-                    <br>Desde 2020, cuento con el Reconocimiento a Perfil Deseable, reflejando mi compromiso con la calidad
-                    educativa y la actualización profesional. Mi experiencia y especialización abarcan áreas clave como
-                    el desarrollo móvil, el Internet de las Cosas (IoT) y la ciencia de datos, contribuyendo al
-                    fortalecimiento de la formación tecnológica en el país.<br />
+                    <strong>Semblanza:</strong> Docente del Tecnológico Nacional de México...<br />
                     <strong>Líneas de Investigación:</strong> Ingeniería de Sistemas<br />
-                    <strong>CVU:</strong><br />
-                    https://scholar.google.com/citations?user=zjPMTe4AAAAJ&hl=es
+                    <strong>CVU:</strong><br>
+                    <a href="https://scholar.google.com/citations?user=zjPMTe4AAAAJ&hl=es" target="_blank"
+                        rel="noopener noreferrer">
+                        https://scholar.google.com/citations?user=zjPMTe4AAAAJ&hl=es
+                    </a>
                 </div>
 
-                <span class="toggle-btn" (click)="toggleDetalles()">
-                    {{ oculto ? 'Ver más...' : 'Ver menos...' }}
+                <!-- BOTÓN -->
+                <span class="toggle-btn" (click)="toggleDetalles(1)">
+                    {{ ocultos[1] ? 'Ver más...' : 'Ver menos...' }}
                 </span>
             </td>
+
             <tbody></tbody>
 
             <div class="separator"></div>

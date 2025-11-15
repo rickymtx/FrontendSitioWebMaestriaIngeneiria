@@ -89,9 +89,7 @@
   margin-bottom: -100px;
   position: relative;
   width: 100vw;
-  /* Ocupa toda la pantalla horizontalmente */
   height: 450px;
-  /* Mantiene una altura fija */
   overflow: hidden;
   margin-bottom: -50px;
 }
@@ -99,15 +97,12 @@
 .carousel-slide {
   display: flex;
   width: 200vw;
-  /* Ajusta según el número de imágenes (2 imágenes = 200vw) */
   transition: transform 0.5s ease-in-out;
 }
 
 .carousel-slide img {
   width: 100vw;
-  /* Cada imagen ocupa toda la pantalla */
   height: 250px;
-  /* Asegura que las imágenes coincidan con la altura del contenedor */
   object-fit: cover;
 }
 
@@ -122,6 +117,12 @@
   cursor: pointer;
   padding: 10px;
   font-size: 18px;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 200vw;
+  transition: transform 0.5s ease-in-out;
 }
 
 .prev {

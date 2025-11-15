@@ -12,10 +12,9 @@ import { FooterGobComponent } from "../../components/footer-gob/footer-gob.compo
   styleUrl: './nucleo-basico.component.css'
 })
 export class NucleoBasicoComponent {
-  oculto = true;
+  ocultos: boolean[] = [true, true];
 
-  toggleDetalles() {
-    this.oculto = !this.oculto;
+  toggleDetalles(i: number) {
+    this.ocultos[i] = !this.ocultos[i];
   }
-
 }
