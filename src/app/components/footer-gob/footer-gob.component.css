@@ -79,6 +79,29 @@
     margin: 0 auto;
 }
 
+/* Imagen pequeña debajo de redes sociales */
+.footer-mini-imagen {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.footer-mini-imagen img {
+    width: 260px;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.footer-mini-imagen img:hover {
+    opacity: 1;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 480px) {
+    .footer-mini-imagen img {
+        width: 200px;
+    }
+}
+
 @media (max-width: 768px) {
     .footer-containerGobierno {
         flex-direction: column;
