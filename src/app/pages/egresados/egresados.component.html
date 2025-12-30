@@ -3,42 +3,62 @@
 <app-navbar-tec></app-navbar-tec>
 
 
-<!-- Foto de Egresados -->
+<!-- Imagen de Egresados -->
 <section>
     <table id="tabla1" class="tabla-imagen">
-        <thead></thead>
-        <tr>
-            <td>
-                <img src="assets/egresados1.jpg">
-            </td>
-        </tr>
-        <tbody></tbody>
+        <tbody>
+            <tr>
+                <td style="text-align:center">
+
+                    <p *ngIf="loading">Cargando información...</p>
+                    <p *ngIf="!loading && errorMsg">{{ errorMsg }}</p>
+
+                    <img *ngIf="!loading && egresado?.imagen" [src]="urlServer + '/' + egresado.imagen" alt="Egresados"
+                        class="imagen-egresado">
+
+                    <p *ngIf="!loading && !egresado?.imagen">
+                        Imagen no disponible
+                    </p>
+
+                </td>
+            </tr>
+        </tbody>
     </table>
 </section>
 
-
-<!-- Egresados -->
 <section class="about-section">
     <div class="about-container">
         <div class="about-text">
-            <!-- Egresados -->
+
             <h2>Egresados de la Maestría en Ingeniería</h2>
-            <p id="texto1">¡Bienvenidos a la sección de egresados! Este espacio está dedicado a nuestros alumnos que
-                han concluido con éxito la Maestría en Ingeniería. Queremos mantenernos conectados contigo y
-                celebrar tus logros profesionales, además de crear una red sólida entre nuestros egresados.
+
+            <p>
+                ¡Bienvenidos a la sección de egresados! Este espacio está dedicado a nuestros alumnos que han concluido
+                con éxito la Maestría en Ingeniería. Queremos mantenernos conectados contigo y celebrar tus logros
+                profesionales, además de crear una red sólida entre nuestros egresados.
             </p>
-            <p id="texto2">Te invitamos a completar el formulario de perfil de egresados que hemos preparado. Este
-                formulario nos permitirá conocer más sobre tu trayectoria profesional y mantener actualizada nuestra
-                base de datos para futuras oportunidades de colaboración, desarrollo profesional y eventos
-                exclusivos para nuestra comunidad de egresados.
+
+            <p>
+                Te invitamos a completar el formulario de perfil de egresados que hemos preparado. Este formulario nos
+                permitirá conocer más sobre tu trayectoria profesional y mantener actualizada nuestra base de datos para
+                futuras oportunidades de colaboración, desarrollo profesional y eventos exclusivos para nuestra
+                comunidad de egresados.
             </p>
+
             <h4>Consultar Formulario:</h4>
-            <!-- Botón de Formulario Solicitud Nuevo Ingreso -->
+
             <div class="button-container">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-vI9U4vdbrTMUFkoqyq--SIGLZzJSyKBqaF15yjv18p8Fpg/viewform"
-                    class="redirect-button" target="_blank" rel="noopener noreferrer">Seguimiento de Egresados
+                <a *ngIf="egresado?.url" [href]="egresado.url" class="redirect-button" target="_blank"
+                    rel="noopener noreferrer">
+
+                    Seguimiento de Egresados
                 </a>
+
+                <p *ngIf="!egresado?.url">
+                    Enlace no disponible por el momento.
+                </p>
             </div>
+
         </div>
     </div>
 </section>

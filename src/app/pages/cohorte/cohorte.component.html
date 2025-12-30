@@ -5,6 +5,7 @@
 
 <!-- Cohorte Generacional -->
 <section class="cohorte-generacional">
+
     <div class="contenido-cohorte">
         <div class="about-image">
             <img src="assets/MI_hd.png" alt="Descripción de la imagen">
@@ -12,23 +13,47 @@
         <h2>Cohorte Generacional</h2>
     </div>
 
-    <table id="tabla1" class="tabla-imagenes">
-        <thead>
-            <tr>
-                <th class="titulo-cohorte">Matrícula</th>
-            </tr>
-            <tr>
-                <td><img src="assets/matricula.jpg" class="imagen-cohorte"></td>
-            </tr>
-            <tr>
-                <th class="titulo-cohorte">Eficiencia Terminal</th>
-            </tr>
-            <tr>
-                <td><img src="assets/eficienciaTerminal.jpg" class="imagen-cohorte"></td>
-            </tr>
-        </thead>
-        <tbody></tbody>
+    <p *ngIf="loading" class="mensaje">Cargando información...</p>
+    <p *ngIf="!loading && errorMsg" class="mensaje error">{{ errorMsg }}</p>
+
+    <table
+        *ngIf="!loading && cohortes.length > 0"
+        id="tabla1"
+        class="tabla-imagenes">
+
+        <tbody>
+
+            <ng-container *ngFor="let item of cohortes">
+
+                <tr>
+                    <th class="titulo-cohorte">
+                        {{ item.titulo }}
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img
+                            *ngIf="item.imagen"
+                            [src]="urlServer + '/uploads/' + item.imagen"
+                            [alt]="item.titulo"
+                            class="imagen-cohorte">
+
+                        <p *ngIf="!item.imagen">
+                            Imagen no disponible
+                        </p>
+                    </td>
+                </tr>
+
+            </ng-container>
+
+        </tbody>
     </table>
+
+    <p *ngIf="!loading && cohortes.length === 0" class="mensaje">
+        No hay cohortes registradas.
+    </p>
+
 </section>
 
 <app-footer-tec></app-footer-tec>
