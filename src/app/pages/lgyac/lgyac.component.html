@@ -5,47 +5,41 @@
 
 <!-- LGyAC -->
 <section class="about-section">
-    <div class="about-container">
-        <div class="about-image">
-            <img src="assets/MI_hd.png" alt="Descripción de la imagen">
-        </div>
-        <div class="about-text">
-            <h2>Líneas Generación y/o Aplicación del Conocimiento del Programa</h2>
-            <h3>La Maestría en Ingeniería cuenta con las siguientes líneas de Investigación (LGAC):</h3>
+  <div class="about-container">
 
-            <!-- Tabla LGyAC -->
-            <table id="tabla1" class="study-plan-table">
-                <tr>
-                    <th>LGAC</th>
-                    <th>Objetivos</th>
-                </tr>
-                <tr>
-                    <td>Ingeniería de Sistemas (ITD)</td>
-                    <td>Generar proyectos de investigación aplicada y de desarrollo tecnológico para aportar soluciones
-                        a problemas agroindustriales de los sectores productivos regionales y/o nacionales.</td>
-                </tr>
-                <tr>
-                    <td>Instrumentación y Bioelectrónica (ITD)</td>
-                    <td>Generar proyectos de Investigación aplicada y desarrollo tecnológico, con el fin de diseñar e
-                        implementar sistemas de Instrumentación y de Control en Bioelectrónica que permitan dar solución
-                        a las necesidades en los sectores agroindustriales alimentarios y no alimentarios del estado, de
-                        la región y del país y que tengan un impacto social, económico y sustentable en estos sectores.
-                    </td>
-                </tr>
-                <tr>
-                    <td>Desarrollo de Tecnología e Innovación (ITVG)</td>
-                    <td>Aplicar de manera integral los conocimientos tecnológicos y biológicos en el desarrollo
-                        productivo de la región.</td>
-                </tr>
-                <tr>
-                    <td>Desarrollo y Gestión de Proyectos de Ingeniería para el Desarrollo Regional (ITD)</td>
-                    <td>Generar proyectos de investigación aplicada para aportar soluciones a problemas prioritarios,
-                        enfocados en las demandas de los sectores estratégicos de la región.</td>
-                </tr>
-                <tbody></tbody>
-            </table>
-        </div>
+    <div class="about-image">
+      <img src="assets/MI_hd.png" alt="Descripción de la imagen">
     </div>
+
+    <div class="about-text">
+      <h2>Líneas Generación y/o Aplicación del Conocimiento del Programa</h2>
+      <h3>
+        La Maestría en Ingeniería cuenta con las siguientes líneas de Investigación (LGAC):
+      </h3>
+
+      <!-- Tabla LGyAC -->
+      <table id="tabla1" class="study-plan-table">
+        <thead>
+          <tr>
+            <th>LGAC</th>
+            <th>Objetivos</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of lgyacList">
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.objetivos }}</td>
+          </tr>
+
+          <tr *ngIf="lgyacList.length === 0">
+            <td colspan="2">No hay registros disponibles</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
 </section>
 
 <app-footer-tec></app-footer-tec>
