@@ -3,21 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { URL_SERVER } from '../../config/server.config';
 
-export interface MapaCurricular {
-  id: number;
-  url: string;
-}
-
 @Injectable({
   providedIn: 'root'
 })
-export class MapaCurricularService {
+export class SistemaNacionalService {
 
-  private apiUrl = `${URL_SERVER}/mapa-curricular`;
+  private apiUrl = `${URL_SERVER}/sistema-nacional`;
 
   constructor(private http: HttpClient) {}
 
-  obtenerMapa(): Observable<MapaCurricular> {
-    return this.http.get<MapaCurricular>(this.apiUrl);
+  getAll(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 }

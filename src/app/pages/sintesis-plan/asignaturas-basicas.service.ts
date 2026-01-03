@@ -21,16 +21,4 @@ export class AsignaturasBasicasService {
   getAll(): Observable<AsignaturaBasica[]> {
     return this.http.get<AsignaturaBasica[]>(this.apiUrl);
   }
-
-  create(data: Partial<AsignaturaBasica>): Observable<AsignaturaBasica> {
-    return this.http.post<AsignaturaBasica>(this.apiUrl, data);
-  }
-
-  update(id: number, data: Partial<AsignaturaBasica>): Observable<AsignaturaBasica> {
-    return this.http.put<AsignaturaBasica>(`${this.apiUrl}/${id}`, data);
-  }
-
-  delete(id: number): Observable<{ deleted: boolean }> {
-    return this.http.delete<{ deleted: boolean }>(`${this.apiUrl}/${id}`);
-  }
 }
