@@ -1,3 +1,4 @@
+
 /* Estilos para presentación de Maestría en Ingeniería */
 
 .image-container {
@@ -8,11 +9,9 @@
 
 .image-container img {
   width: 100%;
-  /* Tamaño de la imagen */
   height: auto;
   object-fit: cover;
   display: block;
-  /* Evita espacios adicionales alrededor de la imagen */
 }
 
 .image-right {
@@ -23,7 +22,6 @@
   margin-bottom: 60px;
 }
 
-/* Estilos para presentación de Maestría en Ingeniería */
 .section-cohorte {
   display: flex;
   flex-direction: row;
@@ -84,6 +82,7 @@
 /*-------------------------------------------------*/
 
 /* Estilos de carrusel */
+
 .carousel-container {
   margin-top: 35px;
   margin-bottom: -100px;
@@ -141,6 +140,7 @@
 /*-------------------------------------------------*/
 
 /* Sección de Galería */
+
 .galeria-becas {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -195,7 +195,6 @@
   text-decoration: underline;
 }
 
-/* Segunda fila con solo dos columnas centradas */
 .galeria-becas .card:nth-child(4),
 .galeria-becas .card:nth-child(5) {
   grid-column: span 1;
@@ -227,7 +226,6 @@
 
 .eventos {
   max-width: 1100px;
-  /* Controla el ancho de la sección */
   margin: 0 auto;
   padding: 2rem 1rem;
   margin-top: 70px;
@@ -323,19 +321,19 @@
 }
 
 .podcast {
-  margin: 0 auto 30px auto;   /* centra cada podcast */
-  max-width: 700px;           /* controla el ancho máximo */
+  margin: 0 auto 30px auto;
+  max-width: 800px; /* controla el ancho máximo */
 }
 
 .podcast iframe {
-  width: 100% !important;     /* respeta el max-width del contenedor */
+  width: 100% !important;  
   display: block;
   margin: 0 auto;
 }
 
 .podcast h4 {
-  max-width: 500px;           /* igual que el iframe */
-  margin: 10px auto;          /* centra texto */
+  max-width: 500px;         
+  margin: 10px auto;     
   text-align: center;
 }
 
