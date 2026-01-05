@@ -4,18 +4,22 @@
 
 
 <!-- Presentación Maestría en Ingeniería -->
-<section class="section-cohorte">
-    <table id="tablaCohorte" class="tabla-imagenes">
+<section class="section-cohorte" *ngIf="portada">
+    <table class="tabla-imagenes">
         <thead>
             <tr>
-                <td><img src="assets/portada.jpg" class="imagen" /></td>
+                <td>
+                    <img [src]="urlServer + '/' + portada.imagen" class="imagen" alt="Imagen portada" />
+                </td>
             </tr>
             <tr>
-                <th class="titulo-cohorte">Programa en el Sistema Nacional de Posgrados (SNP)</th>
+                <th class="titulo-cohorte">
+                    {{ portada.titulo }}
+                </th>
             </tr>
         </thead>
-        <tbody></tbody>
     </table>
+
     <div class="image-container">
         <img src="assets/MI_hd.png" alt="Logo Maestría" class="image-right">
     </div>
@@ -24,54 +28,23 @@
 
 <!-- Carrusel de imágenes -->
 <div class="carousel-container">
-  <div class="carousel-slide" id="carousel-slide">
-    <img src="assets/Simposio2025Azul.png" />
-    <img src="assets/Simposio2025Guinda.png" />
-  </div>
+    <div class="carousel-slide" id="carousel-slide">
+        <img *ngFor="let item of carrusel" [src]="urlServer + '/' + item.imagen"
+            [alt]="'Imagen carrusel ' + item.id_carrusel" />
+    </div>
 </div>
 
 
 <!-- Sección Galeria -->
 <section class="galeria-becas">
-    <div class="card">
-        <img src="assets/agronomía.jpg" alt="Becas Nacionales">
-        <div class="overlay">
-            <h3>Becas Nacionales</h3>
-            <a href="https://secihti.mx/convocatorias/convocatorias-becas-nacionales/convocatorias-abiertas-becas-nacionales/"
-                target="_blank">Ver más ↗</a>
-        </div>
-    </div>
+    <div class="card" *ngFor="let item of galeria">
+        <img [src]="urlServer + '/' + item.imagen" [alt]="item.titulo" />
 
-    <div class="card">
-        <img src="assets/industria.jpg" alt="Becas al Extranjero">
         <div class="overlay">
-            <h3>Becas al Extranjero</h3>
-            <a href="https://secihti.mx/convocatorias/convocatorias-becas-al-extranjero/convocatorias-abiertas-becas-al-extranjero/"
-                target="_blank">Ver más ↗</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="assets/invernaderos.jpg" alt="Trámites de Conclusión de Beca">
-        <div class="overlay">
-            <h3>Trámites de Conclusión de Beca</h3>
-            <a href="https://secihti.mx/becas_posgrados/tramite-de-liberacion-de-beca/" target="_blank">Ver más ↗</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="assets/jovenesIndustria.jpg" alt="Becas Nacionales">
-        <div class="overlay">
-            <h3>SNP</h3>
-            <a href="https://secihti.mx/consultas-snp/" target="_blank">Ver más ↗</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="assets/jovenInvernadero.jpg" alt="SNP">
-        <div class="overlay">
-            <h3>Micrositio MI</h3>
-            <a href="https://sites.google.com/itdurango.edu.mx/mi-itd-itvg/inicio" target="_blank">Ver más ↗</a>
+            <h3>{{ item.titulo }}</h3>
+            <a [href]="item.url" target="_blank">
+                Ver más ↗
+            </a>
         </div>
     </div>
 </section>
@@ -80,38 +53,23 @@
 <!-- Eventos -->
 <section class="eventos">
     <h2 class="titulo-eventos">Eventos</h2>
-    <div class="evento">
-        <div class="evento-header">
-            <span class="fecha">28 y 29 de Mayo del 2025</span>
-            <span class="titulo">Simposio 2025 Maestría en Ingeniería</span>
-            <span class="lugar">Centro de Innovación Tecnológica ITD</span>
-        </div>
-        <p class="descripcion">
-            La Maestría en Ingeniería del Instituto Tecnológico de Durango se enorgullece en presentar el Simposio 2025,
-            un evento académico que reunirá a estudiantes, docentes e investigadores para compartir conocimientos,
-            experiencias y avances en diversas áreas de la ingeniería. Este simposio será una plataforma para la
-            presentación de proyectos, ponencias, mesas de diálogo y actividades enfocadas en la innovación, la
-            tecnología y el desarrollo sostenible.
-        </p>
+
+    <div *ngIf="eventos.length === 0" class="sin-eventos">
+        <p>No hay eventos registrados actualmente.</p>
     </div>
 
-    <hr class="divisor">
-
-    <div class="evento">
+    <div *ngFor="let evento of eventos; let i = index" class="evento">
         <div class="evento-header">
-            <span class="fecha">11 de Junio del 2025</span>
-            <span class="titulo">Coloquio 2025-1 de la Maestría en Ingeniería Administrativa</span>
-            <span class="lugar">Instituto Tecnológico de Durango</span>
+            <span class="fecha">{{ evento.fecha }}</span>
+            <span class="titulo">{{ evento.titulo }}</span>
+            <span class="lugar">{{ evento.lugar }}</span>
         </div>
+
         <p class="descripcion">
-            El Coloquio 2025-1 de la Maestría en Ingeniería Administrativa es un espacio académico diseñado para la
-            exposición y el análisis de proyectos de investigación en el ámbito de la gestión y la administración en
-            ingeniería. Este evento reúne a estudiantes, docentes y expertos en el área para discutir tendencias,
-            metodologías y aplicaciones innovadoras en la optimización de procesos, toma de decisiones y liderazgo
-            organizacional. A través de presentaciones, mesas de diálogo y retroalimentación especializada, el coloquio
-            busca fortalecer el desarrollo de propuestas que contribuyan al avance del conocimiento y la práctica en la
-            ingeniería administrativa.
+            {{ evento.descripcion }}
         </p>
+
+        <hr *ngIf="i < eventos.length - 1" class="divisor">
     </div>
 </section>
 
@@ -121,60 +79,29 @@
     <h2 class="multimedia-title">Multimedia</h2>
 
     <div class="multimedia-content">
-        <!-- Columna izquierda: Podcasts -->
         <div class="multimedia-left">
             <h3 class="subtitle-podcast">Podcasts</h3>
 
-            <div class="podcast">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/3sK0LsQWfMYXiCTDjrr9eD?"
-                    width="100%" height="152" frameBorder="0" allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                <h4>Biopolímeros Tecnofuncionales: Innovación Sostenible</h4>
-                <p>La Dra. Juana Hernández Chavarría entrevista a la Dra. Blanca Elizabeth Morales Contreras y hablan
-                    sobre los biopolímeros tecnofuncionales como materiales naturales que ayudan a resolver problemas
-                    tecnológicos innovadores y sostenibles.</p>
+            <div *ngIf="podcasts.length === 0" class="sin-podcast">
+                <p>No hay podcasts registrados actualmente.</p>
             </div>
 
-            <div class="podcast">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/69oj2aYZDCZphrbfEJNJih?"
-                    width="100%" height="152" frameBorder="0"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                <h4>Digestión Anaerobia: Oportunidad para el Desarrollo Rural</h4>
-                <p>El Dr. José Antonio Martínez Rivera entrevista al Dr. Roberto Valencia Vázquez para hablar sobre la
-                    Digestión anaerobia cómo opción de desarrollo rural.</p>
-            </div>
+            <div *ngFor="let podcast of podcasts" class="podcast">
+                <iframe style="border-radius:12px" [src]="podcast.url | safeUrl" width="100%" height="152"
+                    frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                </iframe>
 
-            <div class="podcast">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/0rHnE9u3bTDbY8LszGOnuL?"
-                    width="100%" height="152" frameBorder="0"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                <h4>IA: Mejorando la Eficiencia en la Industria</h4>
-                <p>La Dra. Juana Hernández Chavarría junto a los Drs. Josue Ortíz Medina y Rubén Guerrero Rivera
-                    explican cómo la inteligencia artificial mejora la eficiencia, la precisión y la personalización en
-                    distintos sectores industriales.
-                </p>
-            </div>
-
-            <div class="podcast">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/7k7NPvkksxtdGOrKbHiQ4s?"
-                    width="100%" height="152" frameBorder="0"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                <h4>Biología y Matemáticas: Conexiones Clave</h4>
-                <p>El Dr. José Antonio Martínez Rivera entrevista a la Dra. Yolocuauhtli Salazar Muñoz en donde analizan
-                    la relación entre la biología y las matemáticas.</p>
+                <h4>{{ podcast.titulo }}</h4>
+                <p>{{ podcast.descripcion }}</p>
             </div>
         </div>
 
-        <!-- Columna derecha: Redes Sociales -->
+        <!-- Redes sociales -->
         <div class="multimedia-right">
             <h3 class="subtitle">Redes Sociales</h3>
 
-            <!-- Facebook embed -->
-            <div class="fb-page"
-                data-href="https://www.facebook.com/ITDgoOficial/?locale=es_LA"
-                data-tabs="timeline" data-width="350" data-height="1100" data-small-header="false"
-                data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"
-                >
+            <div class="fb-page" data-href="https://www.facebook.com/ITDgoOficial/?locale=es_LA" data-tabs="timeline"
+                data-width="350" data-height="1100">
             </div>
         </div>
     </div>
