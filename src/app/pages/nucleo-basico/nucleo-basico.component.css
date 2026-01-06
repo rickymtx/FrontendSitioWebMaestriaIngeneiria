@@ -63,15 +63,29 @@ td.imagen img {
 }
 
 td.datos {
-    padding: 8px 8px 8px 24px;
+    padding: 10px 20px;
     vertical-align: top;
     font-size: 1rem;
     line-height: 1.8;
     text-align: justify;
 }
 
+.texto-semblanza {
+    white-space: pre-line;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 5px 0 15px 0;
+}
+
+.texto-semblanza-inline {
+    white-space: pre-line;
+    display: inline;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
 .separator {
-    width: 530% !important;
+    width: 100% !important;
     height: 2px !important;
     background-color: #ccc !important;
     margin: 40px 0px !important;

@@ -2,91 +2,108 @@
 <app-logos></app-logos>
 <app-navbar-tec></app-navbar-tec>
 
+
 <!-- Núcleo Académico Básico -->
 <div class="perfil-wrapper">
+
     <div class="about-image">
-        <img src="assets/MI_hd.png" alt="Descripción de la imagen" />
+        <img src="assets/MI_hd.png" alt="Imagen institucional" />
     </div>
+
     <div class="perfil-container">
         <h2>Núcleo Académico Básico</h2>
-        <table id="tabla1" class="perfil">
-            <td class="imagen">
-                <img src="assets/Ivan.jpg" alt="Foto de perfil" />
-            </td>
-            <td class="datos">
-                <h3>Dr Iván Gonzalez Lazalde</h3>
-                <strong>Grado Máximo Obtenido:</strong> Doctorado<br />
-                <strong>Especialidad:</strong> Desarrollo Empresarial<br />
-                <strong>Cédula Profesional:</strong> <br />
 
-                <!-- DETALLES OCULTOS -->
-                <div class="detalles" [class.oculto]="ocultos[0]">
-                    <strong>Nivel SNII:</strong> SNII 1<br />
-                    <strong>Cargo:</strong> Profesor Investigador<br />
-                    <strong>Unidad de Adscripción:</strong> Ingeniería Industrial<br />
-                    <strong>Correo Electrónico:</strong> igonzalez&#64;itdurango.edu.mx<br />
-                    <strong>Semblanza:</strong> Profesor con reconocimiento al perfil deseable desde 2007...<br />
-                    <strong>Líneas de Investigación:</strong> Competitividad, sustentabilidad...<br />
-                    <strong>CVU:</strong><br>
-                    <a href="https://www.researchgate.net/profile/Ivan-Lazalde-2?ev=hdr_xprf" target="_blank"
-                        rel="noopener noreferrer">
-                        https://www.researchgate.net/profile/Ivan-Lazalde-2?ev=hdr_xprf
-                    </a>
-                    <br>
+        <p *ngIf="cargando" class="texto-cargando">
+            Cargando información del Núcleo Académico Básico...
+        </p>
 
-                    <a href="https://scholar.google.com.mx/citations?user=aj286qwAAAAJ&hl=es" target="_blank"
-                        rel="noopener noreferrer">
-                        https://scholar.google.com.mx/citations?user=aj286qwAAAAJ&hl=es
-                    </a>
-                    <br>
-                </div>
+        <!-- Lista de profesores -->
+        <ng-container *ngFor="let prof of nucleoBasico; let i = index">
 
-                <!-- BOTÓN -->
-                <span class="toggle-btn" (click)="toggleDetalles(0)">
-                    {{ ocultos[0] ? 'Ver más...' : 'Ver menos...' }}
-                </span>
-            </td>
+            <table id="tabla1" class="perfil">
+                <tbody>
+                    <tr>
+                        <!-- Imagen -->
+                        <td class="imagen">
+                            <img [src]="getImagen(prof.imagen)" alt="Foto de {{ prof.nombre }}" />
+                        </td>
 
-            <tbody></tbody>
+                        <!-- Datos -->
+                        <td class="datos">
+
+                            <h3>{{ prof.nombre }}</h3>
+
+                            <strong>Grado Máximo Obtenido:</strong>
+                            {{ prof.grado_maximo }}<br />
+
+                            <strong>Especialidad:</strong>
+                            {{ prof.especialidad }}<br />
+
+                            <strong>Cédula Profesional:</strong>
+                            {{ prof.cedula_profesional }}<br />
+
+                            <!-- Detalles -->
+                            <div class="detalles" [class.oculto]="ocultos[i]">
+
+                                <strong>Nivel SNII:</strong>
+                                {{ prof.nivel_snii }}<br />
+
+                                <strong>Cargo:</strong>
+                                {{ prof.cargo }}<br />
+
+                                <strong>Unidad de Adscripción:</strong>
+                                {{ prof.unidad_adscripcion }}<br />
+
+                                <strong>Correo Electrónico:</strong>
+                                {{ prof.correo }}<br />
+
+                                <strong>Semblanza:</strong>
+                                <span class="texto-semblanza-inline">
+                                    {{ prof.semblanza }}
+                                </span><br />
+
+                                <strong>Líneas de Investigación:</strong>
+                                <span class="texto-semblanza-inline">
+                                    {{ prof.lineas_investigacion }}
+                                </span><br />
+
+                                <!-- CVU -->
+                                <strong>CVU:</strong><br />
+
+                                <div *ngIf="prof.cvu_enlaces && prof.cvu_enlaces.length > 0; else sinCvu">
+                                    <ng-container *ngFor="let cvu of prof.cvu_enlaces; let idx = index">
+                                        <a [href]="cvu.enlace" target="_blank" rel="noopener noreferrer">
+                                            CVU {{ idx + 1 }}
+                                        </a>
+                                        <br />
+                                    </ng-container>
+                                </div>
+
+                                <ng-template #sinCvu>
+                                    <em>Sin enlaces CVU</em>
+                                </ng-template>
+
+                            </div>
+
+                            <!-- Botón -->
+                            <span class="toggle-btn" (click)="toggleDetalles(i)">
+                                {{ ocultos[i] ? 'Ver más...' : 'Ver menos...' }}
+                            </span>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
             <div class="separator"></div>
-        </table>
 
-        <table id="tabla1" class="perfil">
-            <td class="imagen">
-                <img src="assets/NormaAlicia.jpg" alt="Foto de perfil" />
-            </td>
-            <td class="datos">
-                <h3>Dra. Norma Alicia García Vidaña</h3>
-                <strong>Grado Máximo Obtenido:</strong> Doctorado<br />
-                <strong>Especialidad:</strong> Tecnologías de la Información<br />
-                <strong>Cédula Profesional:</strong> 14670965<br />
+        </ng-container>
 
-                <!-- DETALLES OCULTOS -->
-                <div class="detalles" [class.oculto]="ocultos[1]">
-                    <strong>Nivel SNII:</strong><br />
-                    <strong>Cargo:</strong> Profesor Investigador<br />
-                    <strong>Unidad de Adscripción:</strong> Departamento de Sistemas y Computación<br />
-                    <strong>Correo Electrónico:</strong> norma.garcia&#64;itdurango.edu.mx<br />
-                    <strong>Semblanza:</strong> Docente del Tecnológico Nacional de México...<br />
-                    <strong>Líneas de Investigación:</strong> Ingeniería de Sistemas<br />
-                    <strong>CVU:</strong><br>
-                    <a href="https://scholar.google.com/citations?user=zjPMTe4AAAAJ&hl=es" target="_blank"
-                        rel="noopener noreferrer">
-                        https://scholar.google.com/citations?user=zjPMTe4AAAAJ&hl=es
-                    </a>
-                </div>
+        <!-- Sin datos -->
+        <p *ngIf="!cargando && nucleoBasico.length === 0" class="texto-vacio">
+            No hay información disponible del Núcleo Académico Básico.
+        </p>
 
-                <!-- BOTÓN -->
-                <span class="toggle-btn" (click)="toggleDetalles(1)">
-                    {{ ocultos[1] ? 'Ver más...' : 'Ver menos...' }}
-                </span>
-            </td>
-
-            <tbody></tbody>
-
-            <div class="separator"></div>
-        </table>
     </div>
 </div>
 
