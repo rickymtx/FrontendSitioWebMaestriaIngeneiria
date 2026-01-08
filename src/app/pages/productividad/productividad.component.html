@@ -146,5 +146,84 @@
     </div>
 </section>
 
+
+<!-- LGACs PRODUCTIVIDAD-->
+<ng-container *ngFor="let lgac of lgacs">
+
+    <!-- ================= ARTÍCULOS ================= -->
+    <section class="articulos-container">
+        <h2 class="h2Productividad">{{ lgac.titulo }}</h2>
+        <h2 class="titulo-articulos">Artículos</h2>
+
+        <table class="articulos-tabla">
+            <tbody>
+
+                <ng-container *ngFor="let art of lgac.articulos">
+
+                    <tr class="fila-articulo">
+                        <td (click)="abrirUrl(art.url)">
+                            <strong class="titulo-articulo">{{ art.titulo }}</strong><br>
+                            <span class="descripcion-articulo">• {{ art.descripcion }}</span>
+                        </td>
+                    </tr>
+
+                    <tr class="espacio separator"></tr>
+
+                </ng-container>
+
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ================= CAPÍTULOS ================= -->
+    <section class="capitulos-container">
+        <h2 class="titulo-capitulos2">Capítulos</h2>
+
+        <table class="capitulos-tabla">
+            <tbody>
+
+                <ng-container *ngFor="let cap of lgac.capitulos">
+
+                    <tr class="fila-capitulos" (click)="abrirUrl(cap.url)">
+                        <td>
+                            <strong class="titulo-capitulos">{{ cap.titulo }}</strong><br>
+                            <span class="descripcion-capitulos">• {{ cap.descripcion }}</span>
+                        </td>
+                    </tr>
+
+                    <tr class="espacio separator"></tr>
+
+                </ng-container>
+
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ================= PROYECTOS ================= -->
+    <section class="proyectos-container">
+        <h2 class="titulo-proyectos2">Proyectos de Investigación</h2>
+
+        <table class="proyectos-tabla">
+            <tbody>
+
+                <ng-container *ngFor="let proy of lgac.proyectos">
+
+                    <tr class="fila-proyectos" (click)="abrirUrl(proy.url)">
+                        <td>
+                            <strong class="titulo-proyectos">{{ proy.titulo }}</strong><br>
+                            <span class="descripcion-proyectos">• {{ proy.descripcion }}</span>
+                        </td>
+                    </tr>
+
+                    <tr class="espacio separator"></tr>
+
+                </ng-container>
+
+            </tbody>
+        </table>
+    </section>
+</ng-container>
+
+
 <app-footer-tec></app-footer-tec>
 <app-footer-gob></app-footer-gob>
